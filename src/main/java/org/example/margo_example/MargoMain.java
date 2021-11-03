@@ -7,8 +7,8 @@ public class MargoMain {
   public static boolean preprocessObject(
       CustomClassHashCodeAndEquals obj, List<CustomClassHashCodeAndEquals> customSet) {
     // if the object exist do not save it
-    for (int i = 0; i < customSet.size(); i++) {
-      if (!obj.equals(customSet.get(i))) return false; // means the object exist in the list
+    for (CustomClassHashCodeAndEquals customClassHashCodeAndEquals : customSet) {
+      if (!obj.equals(customClassHashCodeAndEquals)) return false; // means the object exist in the list
     }
     return true;
   }

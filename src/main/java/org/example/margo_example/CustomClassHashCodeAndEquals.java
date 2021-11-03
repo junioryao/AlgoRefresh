@@ -9,13 +9,11 @@ public class CustomClassHashCodeAndEquals implements Comparable<CustomClassHashC
     this.userName = userName;
     this.phoneNumber = phoneNumber;
   }
-
   // override default hashcode method and equals
 
   @Override
   public int hashCode() {
     // return the hashcode of each object ( ash code should be unique for each object )
-
     return this.getPhoneNumber();
   }
 
@@ -24,9 +22,7 @@ public class CustomClassHashCodeAndEquals implements Comparable<CustomClassHashC
     CustomClassHashCodeAndEquals customClassHashCodeAndEquals = (CustomClassHashCodeAndEquals) obj;
     if (this.getPhoneNumber() == ((CustomClassHashCodeAndEquals) obj).getPhoneNumber())
       return false;
-    else if (this.getUserName().equals(((CustomClassHashCodeAndEquals) obj).getUserName()))
-      return false;
-    else return true;
+    else return !this.getUserName().equals(((CustomClassHashCodeAndEquals) obj).getUserName());
   }
 
   public String getUserName() {
